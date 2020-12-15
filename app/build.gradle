@@ -31,6 +31,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
@@ -48,6 +51,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     // Dagger
-   /* implementation 'com.google.dagger:dagger:2.30.1'
-    kapt 'com.google.dagger:dagger-compiler:2.30.1'*/
+    implementation 'com.google.dagger:dagger:2.30'
+    kapt "com.google.dagger:dagger-android-processor:2.30"
+    kapt 'com.google.dagger:dagger-compiler:2.30'
 }

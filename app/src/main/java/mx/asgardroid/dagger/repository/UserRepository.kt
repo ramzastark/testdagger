@@ -2,9 +2,13 @@ package mx.asgardroid.dagger.repository
 
 import mx.asgardroid.dagger.data.UserLocalDataSource
 import mx.asgardroid.dagger.data.UserRemoteDataSource
+import javax.inject.Inject
 
-class UserRepository(var userLocalDataSource: UserLocalDataSource,
-                     var userRemoteDataSource: UserRemoteDataSource) {
+// @Inject lets Dagger know how to create instances of this object
+class UserRepository @Inject constructor(
+    private var userLocalDataSource: UserLocalDataSource,
+    private var userRemoteDataSource: UserRemoteDataSource
+) {
 
     fun getDataLocal(): String {
         return userLocalDataSource.getData()
