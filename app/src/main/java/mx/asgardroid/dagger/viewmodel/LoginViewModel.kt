@@ -7,7 +7,7 @@ import mx.asgardroid.dagger.DaggerApplicationGraph
 import mx.asgardroid.dagger.repository.UserRepository
 
 class LoginViewModel : ViewModel()  {
-    val applicationGraph: ApplicationGraph = DaggerApplicationGraph.create()
+/*    val applicationGraph: ApplicationGraph = DaggerApplicationGraph.create()
     private var repository: UserRepository
 
     init {
@@ -22,7 +22,7 @@ class LoginViewModel : ViewModel()  {
     fun getUserRemote() {
        val data = repository.getDataRemote()
         Log.d("Repository", "Data Remote " + data)
-    }
+    }*/
 
 
 }

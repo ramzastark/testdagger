@@ -3,7 +3,9 @@ package mx.asgardroid.dagger
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
+import mx.asgardroid.dagger.models.Dante
 import mx.asgardroid.dagger.viewmodel.LoginViewModel
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,19 +13,18 @@ class MainActivity : AppCompatActivity() {
         ViewModelProvider(this).get(LoginViewModel::class.java)
     }
 
+    @Inject lateinit var dante: Dante
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        (applicationContext as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-     /*
-     Codigo Ahorrado
-     val repository = UserRepository(
-            UserLocalDataSource(),
-            UserRemoteDataSource()
-        )
-        viewModel.setRepository(repository)*/
+        /*viewModel.getUserLocal()
+        viewModel.getUserRemote()*/
 
-        viewModel.getUserLocal()
-        viewModel.getUserRemote()
+        dante
+
+
     }
 }
