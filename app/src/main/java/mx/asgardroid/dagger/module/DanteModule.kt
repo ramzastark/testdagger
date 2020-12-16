@@ -1,4 +1,4 @@
-package mx.asgardroid.dagger.data
+package mx.asgardroid.dagger.module
 
 import dagger.Module
 import dagger.Provides

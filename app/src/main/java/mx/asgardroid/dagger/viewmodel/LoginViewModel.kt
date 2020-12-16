@@ -7,11 +7,13 @@ import mx.asgardroid.dagger.DaggerApplicationGraph
 import mx.asgardroid.dagger.repository.UserRepository
 
 class LoginViewModel : ViewModel()  {
-/*    val applicationGraph: ApplicationGraph = DaggerApplicationGraph.create()
-    private var repository: UserRepository
+    val applicationGraph: ApplicationGraph = DaggerApplicationGraph.create()
+    val userRepository: UserRepository = applicationGraph.repository()
+
+    private lateinit var repository: UserRepository
 
     init {
-        repository = applicationGraph.repository()
+        this.repository = userRepository
     }
 
     fun getUserLocal() {
@@ -22,7 +24,7 @@ class LoginViewModel : ViewModel()  {
     fun getUserRemote() {
        val data = repository.getDataRemote()
         Log.d("Repository", "Data Remote " + data)
-    }*/
+    }
 
 
 }

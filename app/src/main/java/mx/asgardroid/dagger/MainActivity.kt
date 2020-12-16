@@ -2,6 +2,7 @@ package mx.asgardroid.dagger
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import mx.asgardroid.dagger.models.Dante
 import mx.asgardroid.dagger.viewmodel.LoginViewModel
@@ -20,11 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /*viewModel.getUserLocal()
-        viewModel.getUserRemote()*/
-
-        dante
-
+        viewModel.getUserLocal()
+        viewModel.getUserRemote()
+        Log.d("Repository", "Data Style: ${dante.air.getStyle()} and ${dante.fire.getStyle()}")
 
     }
 }
