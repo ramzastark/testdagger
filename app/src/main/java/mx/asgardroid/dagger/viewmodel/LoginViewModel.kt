@@ -2,16 +2,16 @@ package mx.asgardroid.dagger.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import mx.asgardroid.dagger.ApplicationGraph
+import mx.asgardroid.dagger.DaggerApplicationGraph
 import mx.asgardroid.dagger.repository.UserRepository
 
 class LoginViewModel : ViewModel()  {
+    val applicationGraph: ApplicationGraph = DaggerApplicationGraph.create()
+    private var repository: UserRepository
 
-
-
-    private lateinit var repository: UserRepository
-
-    fun setRepository(repository: UserRepository) {
-        this.repository = repository
+    init {
+        repository = applicationGraph.repository()
     }
 
     fun getUserLocal() {
